@@ -1,8 +1,8 @@
 import cv2
 import pytesseract
 import os
-pytesseract.pytesseract.tesseract_cmd='C:\\Users\\Khushi\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe'
-
+#pytesseract.pytesseract.tesseract_cmd='C:\\Users\\Khushi\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
 
 def read_image(path, file_name):
     img = cv2.imread(path)
