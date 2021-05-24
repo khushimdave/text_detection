@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TextDetection</title>
+    <style>
+    .form {
+      max-width: 500px;
+      margin: auto;
+      padding: 46.5px;
+      font-size: xx-large;
+      font-style: initial;
+      font-family: -webkit-pictograph;
+      border-color: grey;
+      border-width: thick;
+      border-style: inset;
+      text-align:center;
+    }
+    .image {
+      max-width: 1000px;
+      margin: auto;
+      padding-top: 50px;
+      font-size: xx-large;
+      font-style: initial;
+      font-family: courier
+      border-color: grey;
+      border-width: thick;
+      border-style: dotted;
+      text-align:center;
+    }
+    body{
+    background-color: #cccccc;
+    background-image: linear-gradient(lightyellow, powderblue, lightgreen, lightyellow, powderblue, lightgreen);
+
+    }
+
+    </style>
+
+</head>
+<body>
+<div class="form">
+    <form action="/" class="d-flex" method="POST" enctype=multipart/form-data>
+        <label class="form-label" for="customFile">Upload your file here</label><br>
+        <input type="file" class="form-control" id="customFile" name="file" /><br>
+        <button class="btn btn-outline-success" type="submit">SUBMIT</button>
+    </form>
+</div>
+<div class="image">
+        {% if user_img %}
+        <img src="{{ url_for('static', filename=user_img) }}" />
+        {% endif %}
+
+        {% if result %}
+            <p>{{ result }}</p>
+        {% endif %}
+</div>
+</body>
+</html>
