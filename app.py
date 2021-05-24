@@ -1,5 +1,5 @@
 from flask import render_template
-from textdetection import read_image
+#from textdetection import read_image
 import os
 from flask import Flask, request
 from werkzeug.utils import secure_filename
@@ -36,7 +36,7 @@ def image_read():
             filename = secure_filename(file.filename)
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(file_path)
-            detected_text = read_image(file_path, filename)
+            detected_text = "read_image(file_path, filename)"
             print("APP.py ", detected_text)
             saved_file_name = filename.split('.')[0] + "_result.png"
             return render_template('index.html', result = detected_text, user_img = saved_file_name)
