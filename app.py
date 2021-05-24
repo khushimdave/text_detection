@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request
+from flask import render_template
 from textdetection import read_image
 import os
-from flask import Flask, flash, request, redirect, url_for
+from flask import Flask, request
 from werkzeug.utils import secure_filename
 
 cwd = os.getcwd()
@@ -50,4 +50,4 @@ def allowed_file(filename):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
